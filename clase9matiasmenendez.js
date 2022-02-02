@@ -139,20 +139,6 @@ botonPresupuestarB.addEventListener("click", (evt) => {
  localStorage.setItem("espesor de bronce", espesorB.value)
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Botones que no actualiza la pag y me brinda resultado de plegado */
 const botonPresupuestarPH = document.querySelector("#botonPresupuestarPH")
 
@@ -160,10 +146,11 @@ botonPresupuestarPH.addEventListener("click", (evt) => {
  evt.preventDefault();
  calcularPresupuestoPesosPH();
  calcularPresupuestoDolarPH();
- verificarStockHierro();
+ verificarStockHierroP();
  /*Guardar datos de medidas en local store*/
  localStorage.setItem("primer medida de plegado hierro", medida1PH.value)
  localStorage.setItem("segunda medida de plegado hierro", medida2PH.value)
+ localStorage.setItem("segunda medida de plegado hierro", medida3PH.value)
  localStorage.setItem("espesor de plegado hierro", espesorPH.value)
 })
 
@@ -173,10 +160,11 @@ botonPresupuestarPI.addEventListener("click", (evt) => {
  evt.preventDefault();
  calcularPresupuestoPesosPI();
  calcularPresupuestoDolarPI();
- verificarStockInoxidable();
+ verificarStockInoxidableP();
  /*Guardar datos de medidas en local store*/
  localStorage.setItem("primer medida de plegado inoxidable", medida1PI.value)
  localStorage.setItem("segunda medida de plegado inoxidable", medida2PI.value)
+ localStorage.setItem("segunda medida de plegado inoxidable", medida3PI.value)
  localStorage.setItem("espesor de plegado inoxidable", espesorPI.value)
 })
 
@@ -186,13 +174,13 @@ botonPresupuestarPB.addEventListener("click", (evt) => {
  evt.preventDefault();
  calcularPresupuestoPesosPB();
  calcularPresupuestoDolarPB();
- verificarStockBronce();
+ verificarStockBronceP();
  /*Guardar datos de medidas en local store*/
  localStorage.setItem("primer medida de plegado bronce", medida1PB.value)
  localStorage.setItem("segunda medida de plegado bronce", medida2PB.value)
+ localStorage.setItem("segunda medida de plegado bronce", medida3PB.value)
  localStorage.setItem("espesor de plegado bronce", espesorPB.value)
 })
-
 
 
 /*Funcion de stock*/
@@ -219,3 +207,25 @@ document.querySelector("#disponibilidadB").value = "Tenemos stock de bronce"}
 else if (bronce.disponibilidad == false){
 document.querySelector("#disponibilidadB").value = "No tenemos stock de bronce"}}
 
+
+function verificarStockHierroP(){
+if (hierro.disponibilidad == true){
+document.querySelector("#disponibilidadPH").value = "Tenemos stock de hierro"}
+else if (hierro.disponibilidad == false){
+document.querySelector("#precioPesosPH").value = "No tenemos stock de hierro"}
+}
+    
+    
+    
+function verificarStockInoxidableP(){
+if (inoxidable.disponibilidad == true){
+document.querySelector("#disponibilidadPI").value = "Tenemos stock de inoxidable"}
+else if (inoxidable.disponibilidad == false){
+document.querySelector("#disponibilidadPI").value = "No tenemos stock de inoxidable"}}
+    
+    
+function verificarStockBronceP(){
+if (bronce.disponibilidad == true){
+document.querySelector("#disponibilidadPB").value = "Tenemos stock de bronce"}
+else if (bronce.disponibilidad == false){
+document.querySelector("#disponibilidadPB").value = "No tenemos stock de bronce"}}
